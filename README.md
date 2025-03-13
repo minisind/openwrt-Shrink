@@ -14,6 +14,7 @@
 删除openclash中的IP库， 再用如下两个命令创建一个软连接：
 
 ln -s /usr/share/v2ray/geosite.dat   /etc/openclash/GeoSite.dat
+
 ln -s /usr/share/v2ray/geoip.dat     /etc/openclash/GeoIP.dat
 
 这样即可以实现GEOIP数据库的共享，保证两个插件采用相同的数据源分流。 若openclash中设置的是采用小IP库模式，需要修改设置项。
