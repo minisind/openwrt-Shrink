@@ -12,8 +12,10 @@
 ![image](https://github.com/user-attachments/assets/16cc878c-627c-4c2b-a5c6-cd1381610a85)
 
 删除openclash中的IP库， 再用如下两个命令创建一个软连接：
+
 ln -s /usr/share/v2ray/geosite.dat   /etc/openclash/GeoSite.dat
 ln -s /usr/share/v2ray/geoip.dat     /etc/openclash/GeoIP.dat
+
 这样即可以实现GEOIP数据库的共享，保证两个插件采用相同的数据源分流。 若openclash中设置的是采用小IP库模式，需要修改设置项。
 openclash中的输出面板非常漂亮，也很方便使用，但是几种面板采用了相同的字库文件，每个文件占用有1.5M左右。  WINSCP 找到这些字库文件后，同样方式创建软连接，同样可节省出空间。
 
