@@ -8,7 +8,10 @@
  a) https://github.com/nikkinikki-org/OpenWrt-nikki/discussions/197
  b) https://github.com/vernesong/OpenClash/discussions/2995
 在这类方案中，MOSDNS依赖GEOIP数据库对IP分流，留学软件也同样依赖此数据库。 在安装好路由器，各插件正常工作之后，采用 WINSCP工具软件连接到路由器，在插件的安装目录中搜索GEOIP数据库文件。MOSDNS依赖的GEOIP安装在：  /usr/share/v2ray/目录下，  openclash 依赖的GEOIP库安装在：/etc/openclash/下。 
- 首先，在系统启动项中停止openclash，删除openclash中的IP库， 再用如下两个命令创建一个软连接：
+ 首先，在系统启动项中停止openclash，
+![image](https://github.com/user-attachments/assets/16cc878c-627c-4c2b-a5c6-cd1381610a85)
+
+删除openclash中的IP库， 再用如下两个命令创建一个软连接：
 ln -s /usr/share/v2ray/geosite.dat   /etc/openclash/GeoSite.dat
 ln -s /usr/share/v2ray/geoip.dat     /etc/openclash/GeoIP.dat
 这样即可以实现GEOIP数据库的共享，保证两个插件采用相同的数据源分流。 若openclash中设置的是采用小IP库模式，需要修改设置项。
