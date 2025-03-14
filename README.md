@@ -13,16 +13,13 @@
 
 删除openclash中的IP库， 再用如下两个命令创建一个软连接：
 
-ln -s /usr/share/v2ray/geosite.dat   /etc/openclash/GeoSite.dat
+ln -s /usr/share/v2ray/geosite.dat    /etc/openclash/GeoSite.dat
 
-ln -s /usr/share/v2ray/geoip.dat     /etc/openclash/GeoIP.dat
+ln -s /usr/share/v2ray/geoip.dat      /etc/openclash/GeoIP.dat
 
 这样即可以实现GEOIP数据库的共享，保证两个插件采用相同的数据源分流。 若openclash中设置的是采用小IP库模式，需要修改设置项。
 openclash中的输出面板非常漂亮，也很方便使用，但是几种面板采用了相同的字库文件，每个文件占用有1.5M左右。  WINSCP 找到这些字库文件后，同样方式创建软连接，同样可节省出空间。
 
 2.第二位的缩身大法是执行文件的压缩。 
-
-
-
-
-https://zh.wikipedia.org/wiki/%E6%97%B6%E7%A9%BA%E6%9D%83%E8%A1%A1
+在计算机系统中，时间与空间是可以互相转换的，时间可以换成空间，空间也可以换成时间。（ https://zh.wikipedia.org/wiki/%E6%97%B6%E7%A9%BA%E6%9D%83%E8%A1%A1 ） 在这里，如果系统存储空间紧张，并且适当的速度减少可以接受的话，完全可以用插件运行的时间来交换存储空间，即把执行文件进行压缩，节省下来存储空间，而压缩之后的执行文件，在执行时需要解压，速度会比未压缩的减慢，耗费更多的执行时间。
+个人使用的一个方法是： 下载一个UPX（ https://upx.github.io ）的软件，把安装好了之后的路由器中的执行程序导出到电脑上进行压缩，压缩好之后，再传回路由器覆盖原执行文件（上传到路由器时需要在启动项中先停止插件执行，否则会报错）。
